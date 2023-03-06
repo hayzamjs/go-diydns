@@ -1,14 +1,14 @@
 package dns
 
 import (
+	"io/ioutil"
 	"net"
 	"net/http"
-	"io/ioutil"
 )
 
 func ResolveDomain(domain string) ([]string, error) {
 	ips, err := net.LookupIP(domain)
-	
+
 	if err != nil {
 		return nil, err
 	}
@@ -39,7 +39,7 @@ func getIPFromAPI(url string) (string, error) {
 	return string(body), nil
 }
 
-func GetPublicIP() (string) {
+func GetPublicIP() string {
 	results := make(chan string, 2)
 
 	go func() {

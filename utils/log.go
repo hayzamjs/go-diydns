@@ -13,13 +13,13 @@ func init() {
 
 func PrintLog(level string, message string) {
 	switch level {
-		case "debug":
-			log.Debug(message)
-		case "info":
-			log.Info(message)
-		case "warn":
-			log.Warn(message)
-		case "error":
-			log.Error(message)
+	case "debug":
+		log.Debug(message)
+	case "info":
+		log.Info(message)
+	case "warn":
+		log.Warn(message)
+	case "error":
+		log.Error(message)
 	}
 }

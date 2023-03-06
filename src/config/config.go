@@ -2,23 +2,22 @@ package config
 
 import (
 	"encoding/json"
-	"io/ioutil"
 	"errors"
 	"fmt"
+	"io/ioutil"
 
 	"github.com/asaskevich/govalidator"
 )
 
 type Config struct {
-	Name string `json:"name"`
+	Name     string `json:"name"`
 	Provider string `json:"provider"`
-	Token string `json:"token"`
-	Domain string `json:"domain"`
-	Interval int `json:"interval"`
+	Token    string `json:"token"`
+	Domain   string `json:"domain"`
+	Interval int    `json:"interval"`
 }
 
 var supportedProviders = [...]string{"cloudflare"}
-
 
 func ReadConfig(path string) ([]Config, error) {
 	var config []Config

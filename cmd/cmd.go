@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/spf13/cobra"
 	"github.com/go-diydns/utils"
+	"github.com/spf13/cobra"
 
 	"github.com/go-diydns/src"
 )
@@ -17,9 +17,9 @@ var rootCmd = &cobra.Command{
 		utils.PrintBanner()
 
 		if configPath != "" {
-			utils.PrintLog("info", "Using configuration file: " + configPath)
+			utils.PrintLog("info", "Using configuration file: "+configPath)
 		} else {
-			utils.PrintLog("info", "Using default configuration file: " + configPath)
+			utils.PrintLog("info", "Using default configuration file: "+configPath)
 		}
 
 		utils.PrintLog("info", "Starting updater...")
@@ -32,7 +32,7 @@ var configCmd = &cobra.Command{
 	Use:   "config",
 	Short: "Specify the path to the configuration file",
 	Long:  `Specify the path to the configuration file`,
-	Run: func(cmd *cobra.Command, args []string) {},
+	Run:   func(cmd *cobra.Command, args []string) {},
 }
 
 var versionCmd = &cobra.Command{
@@ -40,7 +40,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of your application",
 	Long:  `All software has versions. This is mine.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		utils.PrintLog("info", "Version: " + utils.Version)
+		utils.PrintLog("info", "Version: "+utils.Version)
 	},
 }
 
