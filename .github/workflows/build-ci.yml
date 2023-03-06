@@ -2,7 +2,7 @@ name: Build
 on: [push, pull_request]
 
 jobs:
-  build-linux:
+  build-all:
     runs-on: ubuntu-latest
     steps:
     - name: Install Go
@@ -14,5 +14,5 @@ jobs:
     - name: Install go dependencies
       run: |
         go mod download
-    - name: Build libipfs
+    - name: Build go-diydns
       run: make build-all
